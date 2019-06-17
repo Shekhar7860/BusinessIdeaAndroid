@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "96905149030",
+    "firebase_url": "https://businessideatest.firebaseio.com",
+    "project_id": "businessideatest",
+    "storage_bucket": "businessideatest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96905149030:android:9a1cb22ffa3457b8",
+        "android_client_info": {
+          "package_name": "com.example.mac.androidtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96905149030-dom1lj98r04tkg6dcba31r5rrm69kng3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mac.androidtest",
+            "certificate_hash": "0a5dcdff73b4d33b488b5c5eb20a86693ceecc8a"
+          }
+        },
+        {
+          "client_id": "96905149030-f1g95781sjgvu0ldbojgc5h4906lnu8l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7f0KvaQSi4j9TfBoQdqnSvm9Gyl3xzpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96905149030-f1g95781sjgvu0ldbojgc5h4906lnu8l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
