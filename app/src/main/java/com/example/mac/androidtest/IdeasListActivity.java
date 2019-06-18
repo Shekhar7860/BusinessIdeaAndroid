@@ -1,6 +1,7 @@
 package com.example.mac.androidtest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,10 +17,21 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class IdeasListActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,8 +41,8 @@ public class IdeasListActivity extends AppCompatActivity implements View.OnClick
     Button btn_reset_password;
     Context context;
 
-
-    private final String android_version_names[] = {
+    JSONArray itemSelectedJson = new JSONArray();
+    public final String android_version_names[] = {
             "Business Idea 1",
             "Business Idea 2",
             "Business Idea 3",
@@ -55,11 +67,54 @@ public class IdeasListActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot);
         context = IdeasListActivity.this;
-        FirebaseApp.initializeApp(this);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("My Path");
-
-        myRef.setValue("This Is My Path");
+       FirebaseApp.initializeApp(this);
+        Intent intent = this.getIntent();
+        String gameId = intent.getStringExtra("value");
+        Log.w("myID", gameId);
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("My Path");
+//
+//        myRef.setValue("My Name Is Khan");
+//        for(int i=1; i<= 10; i++){
+//        Map mParent = new HashMap();
+//        mParent.put("Idea", "Business Idea" + " " +  i);
+//        myRef.push().setValue(mParent);
+//        }
+//        myRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                Object[] obj = new Object[] {  };
+//                ArrayList<Object> newObj = new ArrayList<Object>(Arrays.asList(obj));
+//
+//              //  Log.d("value", "User name: " + dataSnapshot.getValue());
+//                try {
+//
+//
+//                for (DataSnapshot childDataSnapshot : dataSnapshot.getChildren()) {
+//                    Log.v("value",""+ childDataSnapshot.getKey()); //displays the key for the node
+//                    Log.v("value2",""+ childDataSnapshot.child("Idea").getValue());;//gives the value for given keyname
+//                    ;
+//                    newObj.add( childDataSnapshot.child("Idea").getValue() );
+//                    itemSelectedJson.put(
+//                            new JSONObject().put("name", childDataSnapshot.child("Idea").getValue())
+//                    );
+//                    //newObj.add(childDataSnapshot.child("Idea").getValue() );
+//
+//                }
+//                Log.w("object", itemSelectedJson.toString());
+//                }
+//                catch (Exception e) {
+//                }
+//                }
+//
+//
+//
+//            @Override
+//            public void onCancelled(DatabaseError error) {
+//                // Failed to read value
+//                Log.w("error", "Failed to read value.", error.toException());
+//            }
+//        });
       //  connectionDetector = new ConnectionDetector(context);
       //  btn_reset_password = (Button) findViewById(R.id.btn_reset_password);
       //  forgot_pass_email = (EditText) findViewById(R.id.forgot_pass_email);
@@ -84,10 +139,12 @@ public class IdeasListActivity extends AppCompatActivity implements View.OnClick
         DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
         recyclerView.setAdapter(adapter);
 
+
     }
     private ArrayList<AndroidVersion> prepareData(){
 
         ArrayList<AndroidVersion> android_version = new ArrayList<>();
+
         for(int i=0;i<android_version_names.length;i++){
             AndroidVersion androidVersion = new AndroidVersion();
             androidVersion.setAndroid_version_name(android_version_names[i]);
