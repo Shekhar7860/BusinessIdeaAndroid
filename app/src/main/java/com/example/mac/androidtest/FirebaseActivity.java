@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,16 +31,23 @@ public class FirebaseActivity extends AppCompatActivity {
     DatabaseReference myRef;
     List<Listdata> list;
     RecyclerView recyclerview;
+    private InterstitialAd interstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firebase);
-//        ename = (TextView) findViewById(R.id.etname);
-//        eemail = (TextView) findViewById(R.id.eemail);
-//        eaddress = (TextView) findViewById(R.id.eaddress);
-//        save = (Button) findViewById(R.id.save);
-//        view = (Button) findViewById(R.id.view);
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-8707066328646930/9890952916");
+        AdRequest request = new AdRequest.Builder().build();
+        interstitialAd.loadAd(request);
+        interstitialAd.setAdListener(new AdListener(){
+            public void onAdLoaded(){
+                if (interstitialAd.isLoaded()) {
+                    interstitialAd.show();
+                }
+            }
+        });
         recyclerview = (RecyclerView) findViewById(R.id.rview);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("message");

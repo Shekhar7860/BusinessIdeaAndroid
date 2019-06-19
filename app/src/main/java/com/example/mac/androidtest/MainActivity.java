@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
@@ -20,6 +22,7 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 public class MainActivity extends AppCompatActivity implements RewardedVideoAdListener {
     private AdView mAdView, mAdView2;
+    public Button start;
     private InterstitialAd interstitialAd;
     private RewardedVideoAd mRewardedVideoAd;
     private WebView webView;
@@ -34,6 +37,14 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
         mAdView2 = findViewById(R.id.adView2);
         AdRequest adRequest2 = new AdRequest.Builder().build();
         mAdView2.loadAd(adRequest2);
+        start = findViewById(R.id.start);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FirebaseActivity.class));
+                finish();
+            }
+        });
       //  mInterstitialAd = new InterstitialAd(this);
       //  mInterstitialAd.setAdUnitId("ca-app-pub-8707066328646930/8992858119");
       //  mInterstitialAd.loadAd(new AdRequest.Builder().build());

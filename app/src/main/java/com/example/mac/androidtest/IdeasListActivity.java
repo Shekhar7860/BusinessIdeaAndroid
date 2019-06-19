@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
@@ -40,6 +41,7 @@ public class IdeasListActivity extends AppCompatActivity implements View.OnClick
     ImageView back_arrow;
     Button btn_reset_password;
     Context context;
+    TextView heading, content;
 
     JSONArray itemSelectedJson = new JSONArray();
     public final String android_version_names[] = {
@@ -69,8 +71,16 @@ public class IdeasListActivity extends AppCompatActivity implements View.OnClick
         context = IdeasListActivity.this;
        FirebaseApp.initializeApp(this);
         Intent intent = this.getIntent();
-        String gameId = intent.getStringExtra("value");
-        Log.w("myID", gameId);
+        if (intent != null) {
+            String gameId = intent.getStringExtra("value");
+            String name = intent.getStringExtra("name");
+            Log.w("myID", gameId);
+            Log.w("name", name);
+            heading  = (TextView) findViewById(R.id.heading);
+            content  = (TextView) findViewById(R.id.content);
+            heading.setText(name);
+            content.setText(gameId);
+        }
 //        FirebaseDatabase database = FirebaseDatabase.getInstance();
 //        DatabaseReference myRef = database.getReference("My Path");
 //
@@ -130,14 +140,14 @@ public class IdeasListActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initViews(){
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        ArrayList<AndroidVersion> androidVersions = prepareData();
-        DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
-        recyclerView.setAdapter(adapter);
+//        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
+//        recyclerView.setHasFixedSize(true);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+//        recyclerView.setLayoutManager(layoutManager);
+//
+//        ArrayList<AndroidVersion> androidVersions = prepareData();
+//        DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
+//        recyclerView.setAdapter(adapter);
 
 
     }

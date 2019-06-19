@@ -48,6 +48,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             public void onClick(View v) {
                 Intent intent = new Intent(context, IdeasListActivity.class);
                 intent.putExtra("value", data.getEmail());
+                intent.putExtra("name", data.getName());
                 context.startActivity(intent);
                 Log.d("check", data.getEmail());
             }

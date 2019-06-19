@@ -5,28 +5,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-8707066328646930/4480797848">
-    </com.google.android.gms.ads.AdView>
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView2"
-        android:layout_width="wrap_content"
+        >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-8707066328646930/4480797848">
-    </com.google.android.gms.ads.AdView>
+        android:background="@color/colorPrimaryDark"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="2dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/back_arrow"
+                android:src="@drawable/ic_action_arrow_left"
+                android:visibility="gone"
+                />
+
+            <!-- <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+
+                 android:layout_centerHorizontal="true"
+                 android:layout_centerVertical="true"
+                 android:text="Set Slots"
+                 android:textAllCaps="true"
+                 android:textColor="@color/white"
+                 android:textSize="15sp" />-->
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:text="Home"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+
+
+
+    </android.support.v7.widget.Toolbar>
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            ads:adSize="BANNER"
+            android:layout_marginTop="0dp"
+            ads:adUnitId="ca-app-pub-8707066328646930/4480797848">
+        </com.google.android.gms.ads.AdView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:text="@string/hometext"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:text="All the Very Best"/>
+        <Button
+            android:layout_width="320dp"
+            android:id="@+id/start"
+            android:layout_height="wrap_content"
+            android:text="Let's Start"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"/>
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            ads:adUnitId="ca-app-pub-8707066328646930/4480797848">
+        </com.google.android.gms.ads.AdView>
+
+    </android.support.design.widget.AppBarLayout>
+
 
     <!--<WebView  xmlns:android="http://schemas.android.com/apk/res/android"-->
         <!--android:id="@+id/webView1"-->
