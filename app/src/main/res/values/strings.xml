@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BusinessWithNoMoney</string>
+    <string name="app_name">StartBusinessWithoutMoney</string>
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
@@ -7,7 +7,7 @@
     <string name="hometext">Welcome To StartBusiness With No Investment. Here You Can Find The Amazing Business Ideas that can help you earn unlimited amounts of money in short time
         Whether you are a student or old age man, you can implement these ideas and make your life better.
         You dont need pretty much time for performing these business. While you are doing your job or taking care of your house, you can engage in these business.
-        Therefore, hit on this button and lets ge started
+        Therefore, hit on this button and lets get started
     </string>
 
     <string name="slide_1_title">Money</string>
