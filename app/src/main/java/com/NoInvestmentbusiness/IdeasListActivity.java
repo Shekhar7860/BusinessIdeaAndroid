@@ -76,53 +76,7 @@ public class IdeasListActivity extends AppCompatActivity implements View.OnClick
                 finish();
             }
         });
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = database.getReference("My Path");
-//
-//        myRef.setValue("My Name Is Khan");
-//        for(int i=1; i<= 10; i++){
-//        Map mParent = new HashMap();
-//        mParent.put("Idea", "Business Idea" + " " +  i);
-//        myRef.push().setValue(mParent);
-//        }
-//        myRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                Object[] obj = new Object[] {  };
-//                ArrayList<Object> newObj = new ArrayList<Object>(Arrays.asList(obj));
-//
-//              //  Log.d("value", "User name: " + dataSnapshot.getValue());
-//                try {
-//
-//
-//                for (DataSnapshot childDataSnapshot : dataSnapshot.getChildren()) {
-//                    Log.v("value",""+ childDataSnapshot.getKey()); //displays the key for the node
-//                    Log.v("value2",""+ childDataSnapshot.child("Idea").getValue());;//gives the value for given keyname
-//                    ;
-//                    newObj.add( childDataSnapshot.child("Idea").getValue() );
-//                    itemSelectedJson.put(
-//                            new JSONObject().put("name", childDataSnapshot.child("Idea").getValue())
-//                    );
-//                    //newObj.add(childDataSnapshot.child("Idea").getValue() );
-//
-//                }
-//                Log.w("object", itemSelectedJson.toString());
-//                }
-//                catch (Exception e) {
-//                }
-//                }
-//
-//
-//
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                // Failed to read value
-//                Log.w("error", "Failed to read value.", error.toException());
-//            }
-//        });
-      //  connectionDetector = new ConnectionDetector(context);
-      //  btn_reset_password = (Button) findViewById(R.id.btn_reset_password);
-      //  forgot_pass_email = (EditText) findViewById(R.id.forgot_pass_email);
+
         back_arrow = (ImageView) findViewById(R.id.back_arrow);
         back_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,14 +89,7 @@ public class IdeasListActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initViews(){
-//        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
-//        recyclerView.setHasFixedSize(true);
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-//        recyclerView.setLayoutManager(layoutManager);
-//
-//        ArrayList<AndroidVersion> androidVersions = prepareData();
-//        DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
-//        recyclerView.setAdapter(adapter);
+
 
 
     }

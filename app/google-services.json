@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "96905149030-nusnpe3uk34ksleajajpgbk4kq738iod.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.NoInvestmentbusiness",
+            "certificate_hash": "0a5dcdff73b4d33b488b5c5eb20a86693ceecc8a"
+          }
+        },
+        {
           "client_id": "96905149030-f1g95781sjgvu0ldbojgc5h4906lnu8l.apps.googleusercontent.com",
           "client_type": 3
         }

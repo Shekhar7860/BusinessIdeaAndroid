@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
  // import com.example.mac.androidtest.R;
@@ -34,12 +35,15 @@ public class FirebaseActivity extends AppCompatActivity {
     DatabaseReference myRef;
     List<Listdata> list;
     RecyclerView recyclerview;
+    private ProgressBar spinner;
     private InterstitialAd interstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firebase);
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.VISIBLE);
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId("ca-app-pub-8707066328646930/9890952916");
         AdRequest request = new AdRequest.Builder().build();
@@ -51,7 +55,8 @@ public class FirebaseActivity extends AppCompatActivity {
                 }
             }
         });
-        recyclerview = (RecyclerView) findViewById(R.id.rview);
+
+       recyclerview = (RecyclerView) findViewById(R.id.rview);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("message");
         myRef.addValueEventListener(new ValueEventListener() {
@@ -68,6 +73,7 @@ public class FirebaseActivity extends AppCompatActivity {
                     String address=userdetails.getAddress();
                     String image=userdetails.getImage();
                      Log.w("activity", image);
+                    spinner.setVisibility(View.GONE);
                     listdata.setName(name);
                     listdata.setEmail(email);
                     listdata.setAddress(address);
