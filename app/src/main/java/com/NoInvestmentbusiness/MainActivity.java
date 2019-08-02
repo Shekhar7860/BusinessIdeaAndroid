@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, "ca-app-pub-8707066328646930~1434163807");
+        MobileAds.initialize(this, "ca-app-pub-9784974231819956~2016923598");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
      //    MobileAds.initialize(this, "ca-app-pub-4761500786576152~8215465788");
         interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId("ca-app-pub-8707066328646930/9890952916");
+        interstitialAd.setAdUnitId("ca-app-pub-9784974231819956/4119863827");
         AdRequest request = new AdRequest.Builder().build();
         interstitialAd.loadAd(request);
         interstitialAd.setAdListener(new AdListener(){
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
     private void loadRewardedVideoAd(){
         AdRequest request = new AdRequest.Builder().addTestDevice("101c9ac27d44").build();
-        rewardedVideoAd.loadAd("ca-app-pub-8707066328646930/4172071427", request);
+        rewardedVideoAd.loadAd("ca-app-pub-9784974231819956/6334963620", request);
         if (rewardedVideoAd.isLoaded()) {
             rewardedVideoAd.show();
         }
